@@ -33,13 +33,11 @@ class Strategies:
         stoch_rsi_oversold = stoch_rsi.iloc[-1] < 0.2
 
         # Combine the indicators for signals
-        # if macd_cross_above and stoch_rsi_oversold:
-        #     return 'long'
-        # elif macd_cross_below and stoch_rsi_overbought:
-        #     return 'short'
-        # else:
-        #     return None
-
-        return 'long'
+        if macd_cross_above and stoch_rsi_oversold:
+            return 'long'
+        elif macd_cross_below and stoch_rsi_overbought:
+            return 'short'
+        else:
+            return None
 
 
