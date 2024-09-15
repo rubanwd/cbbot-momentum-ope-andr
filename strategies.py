@@ -14,7 +14,7 @@ class Strategies:
         df.sort_values('timestamp', inplace=True)
         return df
 
-    def enhanced_momentum_strategy(self, df):
+    def momentum_strategy(self, df):
         # Calculate MACD, Stochastic RSI, and RSI as additional confirmation
         df['MACD'], df['MACD_Signal'] = self.indicators.calculate_macd(df)
         df['Stoch_RSI'] = self.indicators.calculate_stochastic_rsi(df)
@@ -45,3 +45,4 @@ class Strategies:
             return 'short'
         else:
             return None
+
